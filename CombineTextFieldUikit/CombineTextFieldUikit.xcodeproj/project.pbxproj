@@ -13,6 +13,7 @@
 		ED7BF0032BFBE00D00892778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0012BFBE00D00892778 /* Main.storyboard */; };
 		ED7BF0052BFBE00F00892778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0042BFBE00F00892778 /* Assets.xcassets */; };
 		ED7BF0082BFBE00F00892778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0062BFBE00F00892778 /* LaunchScreen.storyboard */; };
+		ED7BF0122BFBE09C00892778 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BF0112BFBE09C00892778 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ED7BF0042BFBE00F00892778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7BF0072BFBE00F00892778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7BF0092BFBE00F00892778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7BF0112BFBE09C00892778 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		ED7BEFFA2BFBE00D00892778 /* CombineTextFieldUikit */ = {
 			isa = PBXGroup;
 			children = (
+				ED7BF0102BFBE08400892778 /* ViewNodel */,
+				ED7BF00F2BFBE07300892778 /* View */,
 				ED7BEFFB2BFBE00D00892778 /* AppDelegate.swift */,
 				ED7BEFFD2BFBE00D00892778 /* SceneDelegate.swift */,
-				ED7BEFFF2BFBE00D00892778 /* ViewController.swift */,
 				ED7BF0012BFBE00D00892778 /* Main.storyboard */,
 				ED7BF0042BFBE00F00892778 /* Assets.xcassets */,
 				ED7BF0062BFBE00F00892778 /* LaunchScreen.storyboard */,
 				ED7BF0092BFBE00F00892778 /* Info.plist */,
 			);
 			path = CombineTextFieldUikit;
+			sourceTree = "<group>";
+		};
+		ED7BF00F2BFBE07300892778 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BEFFF2BFBE00D00892778 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED7BF0102BFBE08400892778 /* ViewNodel */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BF0112BFBE09C00892778 /* ViewModel.swift */,
+			);
+			path = ViewNodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				ED7BF0002BFBE00D00892778 /* ViewController.swift in Sources */,
 				ED7BEFFC2BFBE00D00892778 /* AppDelegate.swift in Sources */,
+				ED7BF0122BFBE09C00892778 /* ViewModel.swift in Sources */,
 				ED7BEFFE2BFBE00D00892778 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
