@@ -44,9 +44,13 @@ struct ContentView: View {
     
     private var numberTextField: some View {
         TextField("0", text: $viewModel.number.value.max(3))
-            .frame(width: 150, height: 80)
+            .frame(width: 100, height: 80)
             .font(.system(size: 40))
             .background(.white)
+            .overlay(content: {
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(.yellow, lineWidth: 9)
+            })
             .cornerRadius(30)
             .keyboardType(.numberPad)
     }

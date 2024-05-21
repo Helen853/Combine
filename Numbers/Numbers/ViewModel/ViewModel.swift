@@ -37,7 +37,7 @@ final class NumbersViewModel: ObservableObject {
     }
     
     func finish() {
-        visibleText.value = "Игра окончена! \n Загаданное чило - \(randomNumber.value)"
+        visibleText.value = "Игра окончена! \n Загаданное чиcло - \(randomNumber.value)"
         objectWillChange.send()
         cancellable.removeAll()
     }
