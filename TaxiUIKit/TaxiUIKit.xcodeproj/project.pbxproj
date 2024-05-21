@@ -13,6 +13,7 @@
 		ED7BF0462BFCC16C00892778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0442BFCC16C00892778 /* Main.storyboard */; };
 		ED7BF0482BFCC16E00892778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0472BFCC16E00892778 /* Assets.xcassets */; };
 		ED7BF04B2BFCC16E00892778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF0492BFCC16E00892778 /* LaunchScreen.storyboard */; };
+		ED7BF0552BFCC1FA00892778 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BF0542BFCC1FA00892778 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ED7BF0472BFCC16E00892778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7BF04A2BFCC16E00892778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7BF04C2BFCC16E00892778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7BF0542BFCC1FA00892778 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		ED7BF03D2BFCC16C00892778 /* TaxiUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				ED7BF0532BFCC1EA00892778 /* ViewModel */,
+				ED7BF0522BFCC1DF00892778 /* View */,
 				ED7BF03E2BFCC16C00892778 /* AppDelegate.swift */,
 				ED7BF0402BFCC16C00892778 /* SceneDelegate.swift */,
-				ED7BF0422BFCC16C00892778 /* ViewController.swift */,
 				ED7BF0442BFCC16C00892778 /* Main.storyboard */,
 				ED7BF0472BFCC16E00892778 /* Assets.xcassets */,
 				ED7BF0492BFCC16E00892778 /* LaunchScreen.storyboard */,
 				ED7BF04C2BFCC16E00892778 /* Info.plist */,
 			);
 			path = TaxiUIKit;
+			sourceTree = "<group>";
+		};
+		ED7BF0522BFCC1DF00892778 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BF0422BFCC16C00892778 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED7BF0532BFCC1EA00892778 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BF0542BFCC1FA00892778 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				ED7BF0432BFCC16C00892778 /* ViewController.swift in Sources */,
 				ED7BF03F2BFCC16C00892778 /* AppDelegate.swift in Sources */,
+				ED7BF0552BFCC1FA00892778 /* ViewModel.swift in Sources */,
 				ED7BF0412BFCC16C00892778 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
