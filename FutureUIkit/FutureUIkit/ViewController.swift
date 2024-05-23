@@ -45,12 +45,7 @@ class ViewController: UIViewController {
         label.frame = CGRect(x: 120, y: 500, width: 300, height: 50)
         label.textColor = .black
         label.font = .systemFont(ofSize: 12)
-        //label.text = "\(viewModel.inputText ?? "")  \(viewModel.textAfterCheck ?? "")"
-//        let subscr1 = Subscribers.Assign(object: label, keyPath: \.text)
-//        viewModel.$inputText.subscribe(subscr1)
-        viewModel.$inputText.subscribe(Subscribers.Assign(object: label, keyPath: \.text))
         viewModel.$textAfterCheck.subscribe(Subscribers.Assign(object: label, keyPath: \.text))
-        
     }
     
     @objc private func tappedCheck() {
