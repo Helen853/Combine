@@ -27,7 +27,8 @@ final class NumberViewModel: ObservableObject {
     
     private func checkNumber() -> AnyPublisher<String, Error>  {
         Future { promise in
-            if (Int(self.inputText ?? "0") ?? 0) % 2 == 0 || (Int(self.inputText ?? "0") ?? 0) % 3 == 0 {
+            guard let number = Int(self.inputText ?? "0") else { return }
+            if number > 1 && !(2..<number).contains(where: { number % $0 == 0 }) {
                 promise(.success("Число не простое"))
             } else {
                 promise(.success("Число простое"))
