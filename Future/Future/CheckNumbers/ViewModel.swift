@@ -26,10 +26,10 @@ final class NumberViewModel: ObservableObject {
     
     private func checkNumber() -> AnyPublisher<String, Error>  {
         Future { promise in
-            if (Int(self.inputText ?? "0") ?? 0) % 2 == 0 {
-                promise(.success("Число простое"))
-            } else {
+            if (Int(self.inputText ?? "0") ?? 0) % 2 == 0 || (Int(self.inputText ?? "0") ?? 0) % 3 == 0 {
                 promise(.success("Число не простое"))
+            } else {
+                promise(.success("Число простое"))
             }
         }
         .eraseToAnyPublisher()
