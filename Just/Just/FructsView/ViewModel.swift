@@ -11,7 +11,10 @@ import Combine
 final class FructsViewModel: ObservableObject {
     @Published var dataToView: [String] = []
     
-    var fructs = ["Яблоко", "Банан", "Апельсин", "Киви", "Груша"]
+    var fructs = ["Яблоко (начальный)", "Банан (начальный)", "Апельсин (начальный)"]
+    var addedFructs = ["Киви", "Груша", "Лимон"]
+    
+    var selectedIndex = 0
     
     func fetch() {
         _ = fructs.publisher
@@ -21,6 +24,20 @@ final class FructsViewModel: ObservableObject {
                 dataToView.append(value)
                 print(value)
             })
+    }
+    
+    func addFruct() {
+        _ = addedFructs.publisher
+            .last()
+            .sink(receiveValue: { [unowned self] value in
+                dataToView.append(value)
+                addedFructs.removeLast()
+            })
+    }
+    
+    func removeFruct() {
+        let removeFruct = dataToView.removeLast()
+        addedFructs.append(removeFruct)
     }
     
 }

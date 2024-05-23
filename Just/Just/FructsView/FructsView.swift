@@ -16,14 +16,13 @@ struct FructsView: View {
                     }
                 }
             }
-            
             HStack {
                 Button("Добавить фрукт") {
-                    print("f")
+                    viewModel.addFruct()
                 }
                 Spacer()
                 Button("Удалить фрукт") {
-                    print("f")
+                    viewModel.removeFruct()
                 }
             }.padding()
             
