@@ -11,10 +11,8 @@ import Combine
 final class FructsViewModel: ObservableObject {
     @Published var dataToView: [String] = []
     
-    var fructs = ["Яблоко (начальный)", "Банан (начальный)", "Апельсин (начальный)"]
-    var addedFructs = ["Киви", "Груша", "Лимон"]
-    
-    var selectedIndex = 0
+    private var fructs = ["Яблоко (начальный)", "Банан (начальный)", "Апельсин (начальный)"]
+    private var addedFructs = ["Киви", "Груша", "Лимон"]
     
     func fetch() {
         _ = fructs.publisher
