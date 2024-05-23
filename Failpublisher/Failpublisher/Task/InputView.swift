@@ -25,7 +25,7 @@ struct InputView: View {
             .textFieldStyle(.roundedBorder)
             HStack {
                 Button {
-                    viewModel.addText()
+                    viewModel.save()
                 } label: {
                     Text("Добавить")
                         .foregroundColor(.gray)
@@ -37,6 +37,10 @@ struct InputView: View {
                     Text("Очистить список")
                 }
             }
+            
+            Text(viewModel.error?.rawValue ?? " ")
+                .foregroundColor(.red)
+            
             List(viewModel.textForView.value, id: \.self) { text in
                 Text(text)
             }

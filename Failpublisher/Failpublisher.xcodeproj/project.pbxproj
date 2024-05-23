@@ -13,6 +13,7 @@
 		ED7BF1702BFF1F8900892778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BF16F2BFF1F8900892778 /* Preview Assets.xcassets */; };
 		ED7BF1792BFF41EC00892778 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BF1782BFF41EC00892778 /* InputView.swift */; };
 		ED7BF17C2BFF425000892778 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BF17B2BFF425000892778 /* ViewModel.swift */; };
+		ED7BF17E2BFF47C600892778 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BF17D2BFF47C600892778 /* ErrorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		ED7BF16F2BFF1F8900892778 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED7BF1782BFF41EC00892778 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		ED7BF17B2BFF425000892778 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ED7BF17D2BFF47C600892778 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				ED7BF17A2BFF423F00892778 /* ViewModel */,
 				ED7BF1782BFF41EC00892778 /* InputView.swift */,
+				ED7BF17D2BFF47C600892778 /* ErrorType.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7BF1792BFF41EC00892778 /* InputView.swift in Sources */,
+				ED7BF17E2BFF47C600892778 /* ErrorType.swift in Sources */,
 				ED7BF16B2BFF1F8600892778 /* ContentView.swift in Sources */,
 				ED7BF17C2BFF425000892778 /* ViewModel.swift in Sources */,
 				ED7BF1692BFF1F8600892778 /* FailpublisherApp.swift in Sources */,

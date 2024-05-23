@@ -11,7 +11,7 @@ import SwiftUI
 struct FailpublisherApp: App {
     var body: some Scene {
         WindowGroup {
-            FailPublisherView()
+            InputView()
         }
     }
 }
