@@ -17,6 +17,7 @@
 		ED80FB122C00BBB80049E30E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80FB112C00BBB70049E30E /* State.swift */; };
 		ED80FB142C00BFC70049E30E /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80FB132C00BFC70049E30E /* ConnectingView.swift */; };
 		ED80FB192C00C4130049E30E /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80FB182C00C4130049E30E /* DownloadView.swift */; };
+		ED80FB1C2C00C8030049E30E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80FB1B2C00C8030049E30E /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		ED80FB112C00BBB70049E30E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		ED80FB132C00BFC70049E30E /* ConnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; };
 		ED80FB182C00C4130049E30E /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
+		ED80FB1B2C00C8030049E30E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		ED80FAFA2C0094DF0049E30E /* PassthroughSubject */ = {
 			isa = PBXGroup;
 			children = (
+				ED80FB1A2C00C7E40049E30E /* Extension */,
 				ED80FB0A2C00B8870049E30E /* Goods */,
 				ED80FB092C00B8720049E30E /* Repeat */,
 				ED80FAFB2C0094DF0049E30E /* PassthroughSubjectApp.swift */,
@@ -123,6 +126,14 @@
 				ED80FB112C00BBB70049E30E /* State.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ED80FB1A2C00C7E40049E30E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED80FB1B2C00C8030049E30E /* View+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				ED80FAFE2C0094DF0049E30E /* ContentView.swift in Sources */,
 				ED80FB0E2C00B8A80049E30E /* ViewModel.swift in Sources */,
 				ED80FAFC2C0094DF0049E30E /* PassthroughSubjectApp.swift in Sources */,
+				ED80FB1C2C00C8030049E30E /* View+Extension.swift in Sources */,
 				ED80FB122C00BBB80049E30E /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
