@@ -44,12 +44,40 @@ struct GoodView: View {
                     makeGoodCell(good: item)
                 }
             }
-        }.opacity(isLoad ? 1 : 0)
+        }.isVisible(isVisible: isLoad)
     }
 }
 
 struct GoodView_Previews: PreviewProvider {
     static var previews: some View {
         GoodView()
+    }
+}
+
+struct IsVisibleModifier: ViewModifier{
+    var isVisible: Bool
+    var transition: AnyTransition
+
+    func body(content: Content) -> some View {
+        ZStack{
+            if isVisible{
+                content
+                    .transition(transition)
+            }
+        }
+    }
+}
+
+extension View {
+    func isVisible(
+        isVisible : Bool,
+        transition : AnyTransition = .scale
+    ) -> some View{
+        modifier(
+            IsVisibleModifier(
+                isVisible: isVisible,
+                transition: transition
+            )
+        )
     }
 }

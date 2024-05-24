@@ -11,7 +11,7 @@ import SwiftUI
 struct PassthroughSubjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GoodView()
         }
     }
 }
