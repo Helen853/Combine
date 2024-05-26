@@ -14,6 +14,8 @@
 		ED98B97C2C0368EF00085160 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B97B2C0368EF00085160 /* EpisodesView.swift */; };
 		ED98B97E2C0368FE00085160 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B97D2C0368FE00085160 /* EpisodesViewModel.swift */; };
 		ED98B9812C036A6C00085160 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B9802C036A6C00085160 /* Episode.swift */; };
+		ED98B9832C03C42800085160 /* LoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B9822C03C42800085160 /* LoadedView.swift */; };
+		ED98B9852C03C4DF00085160 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B9842C03C4DF00085160 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		ED98B97B2C0368EF00085160 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
 		ED98B97D2C0368FE00085160 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
 		ED98B9802C036A6C00085160 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		ED98B9822C03C42800085160 /* LoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedView.swift; sourceTree = "<group>"; };
+		ED98B9842C03C4DF00085160 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 				ED98B97A2C03689800085160 /* ViewModel */,
 				ED98B9792C03689100085160 /* View */,
 				ED98B96A2C03606900085160 /* RikAndMortySUIApp.swift */,
+				ED98B9842C03C4DF00085160 /* State.swift */,
 				ED98B96E2C03606A00085160 /* Assets.xcassets */,
 				ED98B9702C03606A00085160 /* Preview Content */,
 			);
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				ED98B97B2C0368EF00085160 /* EpisodesView.swift */,
+				ED98B9822C03C42800085160 /* LoadedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,7 +187,9 @@
 				ED98B97C2C0368EF00085160 /* EpisodesView.swift in Sources */,
 				ED98B96D2C03606900085160 /* ContentView.swift in Sources */,
 				ED98B97E2C0368FE00085160 /* EpisodesViewModel.swift in Sources */,
+				ED98B9832C03C42800085160 /* LoadedView.swift in Sources */,
 				ED98B9812C036A6C00085160 /* Episode.swift in Sources */,
+				ED98B9852C03C4DF00085160 /* State.swift in Sources */,
 				ED98B96B2C03606900085160 /* RikAndMortySUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

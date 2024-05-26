@@ -29,8 +29,7 @@ struct ContentView: View {
 }
 struct ErrorForAlert: Error, Identifiable {
     var id = UUID()
-    
-    let title = "Errorr"
+    let title = "Error"
     var message = "Try Again"
 }
 
@@ -63,7 +62,7 @@ class URLSessionViewModel: ObservableObject {
     }
     
     func loadImage() {
-        guard let url = URL(string: "https://via.placeholder.com/600/d32776%7C") else { return }
+        guard let url = URL(string: "htts://via.placeholder.com/600/d3776%7C") else { return }
         URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .tryMap { data in

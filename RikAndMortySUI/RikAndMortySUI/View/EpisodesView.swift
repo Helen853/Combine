@@ -1,24 +1,31 @@
 //
 //  EpisodesView.swift
 //  RikAndMortySUI
-//
-//  Created by Киса Мурлыса on 26.05.2024.
-//
 
 import SwiftUI
 
 struct EpisodesView: View {
     @StateObject var viewModel = EpisodesViewModel()
+    @State var isShowAlert = true
     
     var body: some View {
         VStack {
             Image("title")
             Spacer()
-            ScrollView {
-                ForEach(viewModel.currentEpisodes, id: \.name) { episode in
-                    makeCell(episode: episode)
+            switch viewModel.state {
+            case .loading:
+                LoadView()
+            case .error:
+                errorAlert
+            case .loaded:
+                ScrollView {
+                    ForEach(viewModel.currentEpisodes, id: \.name) { episode in
+                        makeCell(episode: episode)
                     }
                 }
+            }
+            Spacer()
+            
         }.onAppear {
             viewModel.fetch()
         }
@@ -42,7 +49,7 @@ struct EpisodesView: View {
                     case .failure(_):
                         Text("error")
                     case .empty:
-                        Text("Empty")
+                        Text(" ")
                     @unknown default:
                         fatalError()
                     }
@@ -56,6 +63,26 @@ struct EpisodesView: View {
         }.padding()
     }
     
+    private var errorAlert: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundColor(.green)
+                .frame(width: 320, height: 100)
+            VStack {
+                Text("Упс! Что-то пошло не так \n Повторите снова")
+                    .foregroundColor(.white)
+                    .font(.system(size: 20))
+                Divider()
+                    .frame(width: 320, height: 2)
+                    .foregroundColor(.white)
+                Button("Ok") {
+                    isShowAlert = false
+                    viewModel.state = .loading
+                    viewModel.fetch()
+                }
+            }
+        }.opacity(isShowAlert ? 1 : 0)
+    }
     
     private func makeBottomCell(episode: CurrentEpisode) -> some View {
         ZStack {
@@ -65,15 +92,16 @@ struct EpisodesView: View {
             HStack {
                 Image("Play")
                     .frame(width: 32.88, height: 34.08)
-                Text("\(episode.name) | \(episode.number)")
-                    .font(.system(size: 16))
-                    .frame(width: 160, height: 22, alignment: .leading)
+                Text("\(episode.name) ")
+                Text("| \(episode.number)")
+                    .frame(width: 75, height: 22, alignment: .leading)
                 Spacer()
                 Image(systemName: "heart")
                     .resizable()
                     .foregroundColor(Color("heartColor"))
                     .frame(width: 35.88, height: 29.99)
             }.padding(.horizontal, 15)
+                .font(.system(size: 16))
         }
     }
 }
