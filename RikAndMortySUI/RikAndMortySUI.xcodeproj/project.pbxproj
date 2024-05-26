@@ -11,6 +11,9 @@
 		ED98B96D2C03606900085160 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B96C2C03606900085160 /* ContentView.swift */; };
 		ED98B96F2C03606A00085160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED98B96E2C03606A00085160 /* Assets.xcassets */; };
 		ED98B9722C03606A00085160 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED98B9712C03606A00085160 /* Preview Assets.xcassets */; };
+		ED98B97C2C0368EF00085160 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B97B2C0368EF00085160 /* EpisodesView.swift */; };
+		ED98B97E2C0368FE00085160 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B97D2C0368FE00085160 /* EpisodesViewModel.swift */; };
+		ED98B9812C036A6C00085160 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED98B9802C036A6C00085160 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		ED98B96C2C03606900085160 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED98B96E2C03606A00085160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED98B9712C03606A00085160 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED98B97B2C0368EF00085160 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
+		ED98B97D2C0368FE00085160 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
+		ED98B9802C036A6C00085160 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 		ED98B95E2C03606900085160 = {
 			isa = PBXGroup;
 			children = (
+				ED98B9782C03687200085160 /* Repeat */,
 				ED98B9692C03606900085160 /* RikAndMortySUI */,
 				ED98B9682C03606900085160 /* Products */,
 			);
@@ -51,8 +58,10 @@
 		ED98B9692C03606900085160 /* RikAndMortySUI */ = {
 			isa = PBXGroup;
 			children = (
+				ED98B97F2C036A6000085160 /* Model */,
+				ED98B97A2C03689800085160 /* ViewModel */,
+				ED98B9792C03689100085160 /* View */,
 				ED98B96A2C03606900085160 /* RikAndMortySUIApp.swift */,
-				ED98B96C2C03606900085160 /* ContentView.swift */,
 				ED98B96E2C03606A00085160 /* Assets.xcassets */,
 				ED98B9702C03606A00085160 /* Preview Content */,
 			);
@@ -65,6 +74,38 @@
 				ED98B9712C03606A00085160 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED98B9782C03687200085160 /* Repeat */ = {
+			isa = PBXGroup;
+			children = (
+				ED98B96C2C03606900085160 /* ContentView.swift */,
+			);
+			path = Repeat;
+			sourceTree = "<group>";
+		};
+		ED98B9792C03689100085160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED98B97B2C0368EF00085160 /* EpisodesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED98B97A2C03689800085160 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED98B97D2C0368FE00085160 /* EpisodesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED98B97F2C036A6000085160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED98B9802C036A6C00085160 /* Episode.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED98B97C2C0368EF00085160 /* EpisodesView.swift in Sources */,
 				ED98B96D2C03606900085160 /* ContentView.swift in Sources */,
+				ED98B97E2C0368FE00085160 /* EpisodesViewModel.swift in Sources */,
+				ED98B9812C036A6C00085160 /* Episode.swift in Sources */,
 				ED98B96B2C03606900085160 /* RikAndMortySUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
