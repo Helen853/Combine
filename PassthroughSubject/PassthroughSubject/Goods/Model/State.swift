@@ -4,8 +4,8 @@
 
 import Foundation
 
-enum StateView {
-    case connecting
-    case download
+enum StateView<Model> {
+    case connecting(_ time: Model)
+    case download(_ time: Model)
     case loaded
 }

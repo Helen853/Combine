@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DownloadView: View {
     @State var isShow = [false, false, false]
+    @StateObject var viewModel = GoodViewModel()
     
     var body: some View {
         VStack {
@@ -17,6 +18,14 @@ struct DownloadView: View {
                 .font(.title)
             List {
                 loadView
+                loadView
+                loadView
+                loadView
+                loadView
+//                ForEach(0..<viewModel.loadedGood.count) { index in
+//                    loadView
+//                }
+                
             }
             
         }.onAppear {
@@ -40,13 +49,41 @@ struct DownloadView: View {
     
     private var loadView: some View {
         HStack(spacing: 20) {
-            ForEach(0..<isShow.count) { index in
                 Rectangle()
-                    .fill(.blue)
-                    .frame(width: 10, height: 10)
-                    .opacity(isShow[index] ? 1 : 0)
+                    .fill(Color(uiColor: .lightGray))
+                    .frame(width: 20, height: 20)
+                    .opacity(isShow[0] ? 1 : 0)
                     .shadow(color: .cyan, radius: 5)
-            }
+                Rectangle()
+                    .fill(Color(uiColor: .lightGray))
+                    .frame(width: 200, height: 20)
+                    .opacity(isShow[1] ? 1 : 0)
+                    .shadow(color: .cyan, radius: 5)
+                Rectangle()
+                    .fill(Color(uiColor: .lightGray))
+                    .frame(width: 50, height: 20)
+                    .opacity(isShow[2] ? 1 : 0)
+                    .shadow(color: .cyan, radius: 5)
+        }
+    }
+    
+    private func makeShimmer(index: Int) -> some View {
+        HStack {
+            Rectangle()
+                .fill(Color(uiColor: .lightGray))
+                .frame(width: 20, height: 20)
+                .opacity(isShow[0] ? 1 : 0)
+                .shadow(color: .cyan, radius: 5)
+            Rectangle()
+                .fill(Color(uiColor: .lightGray))
+                .frame(width: 170, height: 20)
+                .opacity(isShow[1] ? 1 : 0)
+                .shadow(color: .cyan, radius: 5)
+            Rectangle()
+                .fill(Color(uiColor: .lightGray))
+                .frame(width: 50, height: 20)
+                .opacity(isShow[2] ? 1 : 0)
+                .shadow(color: .cyan, radius: 5)
         }
     }
 }

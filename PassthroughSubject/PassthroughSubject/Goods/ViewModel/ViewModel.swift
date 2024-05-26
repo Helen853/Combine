@@ -10,7 +10,9 @@ import Combine
 
 final class GoodViewModel: ObservableObject {
     @Published var loadedGood: [Good] = []
-    @Published var state: StateView = .connecting
+    @Published var state: StateView<String> = .connecting("")
+    var startDate = Date.now
+    var currentTime = 0
     let verify = PassthroughSubject<String, Never>()
     
     var cancellable: AnyCancellable?
@@ -26,40 +28,42 @@ final class GoodViewModel: ObservableObject {
         .init(image: "book.circle", name: "Книга", price: 651)
     ]
     
-//    init() {
-//        bind()
-//    }
-    
-//    func bind() {
-//        cancellable = verify
-//            .sink(receiveValue: { [unowned self] value in
-//                if !value.isEmpty {
-//                    state = .data(value)
-//                } else {
-//                    state = .error(NSError(domain: "Error", code: 400))
-//                }
-//            })
-//    }
-    
     func start() {
-        let timeFormat = DateFormatter()
-        timeFormat.dateFormat = "00:ss"
-        
-        timerCancellable = Timer
-            .publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .sink(receiveValue: { [unowned self] datum in
-                verify.send(timeFormat.string(from: datum))
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        timerCancellable =  timer
+            .sink(receiveValue: { [unowned self] _ in
+                currentTime += 1
+                verify.send(String("00:0\(currentTime)"))
+            })
+        fetch()
+        bind()
+    }
+    
+    private func bind() {
+        cancellable = verify
+            .sink(receiveValue: { [unowned self] value in
+                if !value.isEmpty {
+                    state = .connecting(value)
+                    updateState(value: value)
+                } else {
+                    state = .loaded
+                }
             })
     }
     
-    func fetch() {
+    private func fetch() {
         _ = goods.publisher
-            .sink(receiveCompletion: { complition in
-                print(complition)
-            }, receiveValue: { [unowned self] value in
-                loadedGood.append(value)
-            })
+            .filter { $0.price >= 100 }
+            .sink { self.loadedGood.append($0) }
     }
-        
+    
+    private func updateState(value: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.state = .download(value)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.timerCancellable?.cancel()
+                self.state = .loaded
+            }
+        }
+    }
 }

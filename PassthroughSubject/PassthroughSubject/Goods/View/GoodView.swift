@@ -8,18 +8,19 @@ struct GoodView: View {
     
     @StateObject var viewModel = GoodViewModel()
     @State var isLoad = false
+    @State var isLoadText = true
     
     var body: some View {
         VStack {
-            Text("timer left")
-            Spacer()
+            Text("timer left    ").isVisible(isVisible: isLoadText)
             makeView()
             Spacer()
             
             Button("Start") {
-                viewModel.fetch()
+                viewModel.verify.send("00:00")
                 viewModel.start()
                 isLoad.toggle()
+                isLoadText.toggle()
             }
         }
     }
@@ -28,19 +29,25 @@ struct GoodView: View {
         HStack {
             Image(systemName: good.image)
             Text(good.name)
+            Spacer()
             Text("\(good.price) руб")
         }
     }
     
     private func makeView() -> some View {
-        Group {
+        VStack {
             switch viewModel.state {
-            case .connecting:
+            case .connecting(let time):
+                Text("timer left \(time)")
+                Spacer()
                 ConnectView()
-            case .download:
+                Spacer()
+            case .download(let time):
+                Text("timer left \(time)")
                 DownloadView()
             case .loaded:
-                List(viewModel.goods, id: \.id) { item in
+                Text("timer left")
+                List(viewModel.loadedGood, id: \.id) { item in
                     makeGoodCell(good: item)
                 }
             }
