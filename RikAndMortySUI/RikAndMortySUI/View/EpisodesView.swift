@@ -5,8 +5,6 @@
 import SwiftUI
 
 struct EpisodesView: View {
-    @StateObject var viewModel = EpisodesViewModel()
-    @State var isShowAlert = true
     
     var body: some View {
         VStack {
@@ -25,10 +23,34 @@ struct EpisodesView: View {
                 }
             }
             Spacer()
-            
         }.onAppear {
             viewModel.fetch()
         }
+    }
+    
+    @StateObject private var viewModel = EpisodesViewModel()
+    
+    @State private var isShowAlert = true
+    
+    private var errorAlert: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundColor(.green)
+                .frame(width: 320, height: 100)
+            VStack {
+                Text("Упс! Что-то пошло не так \n Повторите снова")
+                    .foregroundColor(.white)
+                    .font(.system(size: 20))
+                Divider()
+                    .frame(width: 320, height: 2)
+                    .foregroundColor(.white)
+                Button("Ok") {
+                    isShowAlert = false
+                    viewModel.state = .loading
+                    viewModel.fetch()
+                }
+            }
+        }.opacity(isShowAlert ? 1 : 0)
     }
     
     private func makeCell(episode: CurrentEpisode) -> some View {
@@ -39,7 +61,6 @@ struct EpisodesView: View {
                 .blur(radius: 1)
                 .frame(width: 311, height: 357)
             VStack {
-
                 AsyncImage(url: URL(string: episode.image)) { phase in
                     switch phase {
                     case .success(let image):
@@ -61,27 +82,6 @@ struct EpisodesView: View {
                makeBottomCell(episode: episode)
             }.frame(width: 311, height: 357)
         }.padding()
-    }
-    
-    private var errorAlert: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(.green)
-                .frame(width: 320, height: 100)
-            VStack {
-                Text("Упс! Что-то пошло не так \n Повторите снова")
-                    .foregroundColor(.white)
-                    .font(.system(size: 20))
-                Divider()
-                    .frame(width: 320, height: 2)
-                    .foregroundColor(.white)
-                Button("Ok") {
-                    isShowAlert = false
-                    viewModel.state = .loading
-                    viewModel.fetch()
-                }
-            }
-        }.opacity(isShowAlert ? 1 : 0)
     }
     
     private func makeBottomCell(episode: CurrentEpisode) -> some View {

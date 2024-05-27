@@ -58,7 +58,6 @@ class URLSessionViewModel: ObservableObject {
                 dataToView = posts
             }
             .store(in: &cansellabe)
-
     }
     
     func loadImage() {

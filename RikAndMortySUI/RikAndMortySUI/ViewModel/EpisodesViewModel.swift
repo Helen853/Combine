@@ -8,7 +8,8 @@
 import SwiftUI
 import Combine
 
-class EpisodesViewModel: ObservableObject {
+/// ViewModel для экрана с эпизодами
+final class EpisodesViewModel: ObservableObject {
     @Published var dataToView: [Episode] = []
     @Published var alertError: ErrorForAlert?
     @Published var currentEpisodes: [CurrentEpisode] = []
@@ -34,12 +35,11 @@ class EpisodesViewModel: ObservableObject {
                 for episode in dataToView {
                     loadUrlImage(episode: episode)
                 }
-                
             }
             .store(in: &cansellabe)
     }
     
-    func loadUrlImage(episode: Episode) {
+    private func loadUrlImage(episode: Episode) {
         guard let url = URL(string: episode.characters.randomElement() ?? "") else { return }
         URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
